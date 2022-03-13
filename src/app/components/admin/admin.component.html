@@ -1,0 +1,16 @@
+<!-- Visar order lista -->
+<div *ngFor="let order of myOrders ">
+    <h2>Beställning id:{{order.id}}</h2>
+    <p>Beställd av:{{order.createdBy}}</p>
+    <p>Betalningssätt:{{order.paymentMethod}}</p>
+    <div *ngFor="let o of order.orderRows">
+        <h3>Beställd produkt:</h3>
+        <p>Film: produkt id: {{o.productId}} pris: {{o.amount | currency:'SEK'}}</p>
+    </div>
+    <p><strong>Totalt i SEK:{{order.totalPrice}}</strong></p>
+    <button (click)="deleteOrder(order.id)">Ta bort beställningen</button>
+</div>
+<!-- Om det inte finns någon order -->
+<div *ngIf="myOrders.length<1">
+    <h2>Du har inte lagt någon order!</h2>
+</div>

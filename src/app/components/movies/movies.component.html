@@ -1,0 +1,28 @@
+<main>
+    <!-- Visas om ingen kategori är vald -->
+    <ul *ngIf="filter==false">
+        <li *ngFor="let movie of movies" >
+            <h3>{{movie.name}}</h3>
+            <h5>{{movie.year}}</h5>
+            <img class="movieItem" [src]="movie.imageUrl" alt="Movie poster" />
+            <span></span>
+            <p>{{movie.description}}</p>
+            <br><span>Publicerat : {{movie.added | date:'mediumDate' }}</span>
+            <br><span><strong>Pris: {{movie.price | currency:'SEK'}}</strong></span>
+            <button class="buyButton" (click)="saveToCart(movie)"> Lägg till i varukorgen</button>
+        </li>
+    </ul>
+    <!-- Visas om kategorin är vald -->
+    <ul *ngIf="filter==true">
+        <li *ngFor="let movie of filteredMovies" >
+            <h3>{{movie.name}}</h3>
+            <h5>{{movie.year}}</h5>
+            <img class="movieItem" [src]="movie.imageUrl" alt="Movie poster" />
+            <span></span>
+            <p>{{movie.description}}</p>
+            <br><span>Publicerat : {{movie.added | date:'mediumDate' }}</span>
+            <br><span><strong>Pris: {{movie.price | currency:'SEK'}}</strong></span>
+            <button class="buyButton" (click)="saveToCart(movie)"> Lägg till i varukorgen</button>
+        </li>
+    </ul>
+</main>

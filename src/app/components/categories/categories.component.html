@@ -1,0 +1,5 @@
+<!-- ng for c of categories... -->
+<div class="category">
+    <h3>Välj kategorin:</h3>
+        <button (click)="categoryId(c.id)" *ngFor="let c of categories"><a routerLink="">{{c.name}}</a></button>
+</div>

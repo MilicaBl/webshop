@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="logo">
+        <a routerLink="">
+            <i style="font-size: 40px; padding-top: 20px; padding-left: 30px;" class="fas fa-film" aria-hidden="true">&nbsp;</i>
+        </a>    
+        <h1 style="font-size: 30px;">Cinex</h1>
+    </div>
+    <!-- Kategorier behöver fixas -->
+    <app-categories></app-categories>
+    <button routerLink="/admin" class="login">Logga in!</button>
+    <button routerLink="/cart"class="cart-button">
+        <i class="fas fa-shopping-cart"></i>
+        <div class="items-number"><strong>{{quantity}}</strong></div>
+    </button>
+</nav>

@@ -1,0 +1,32 @@
+.movieItem{
+    width: 180px; 
+    height: 260px;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+li{
+    list-style: none;
+    flex: 0, 0, 120px;
+    width: 300px;
+    margin:0px;
+    padding: 20px;
+}
+button{
+    margin:10px;
+    padding: 10px;
+    border-radius: 5%;
+    background-color: rgba(137, 43, 226, 0.541);
+    font-weight: bold;
+}
+p{
+    height: 100px;
+    font-style: italic;
+    font-size: 1rem;
+}
+main{
+    background-color: white;
+}

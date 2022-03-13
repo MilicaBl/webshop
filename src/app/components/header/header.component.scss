@@ -1,0 +1,38 @@
+.navbar{
+    width: 100%;
+    height: auto;
+    background-color: blueviolet;
+    display: flex;
+}
+.logo{
+    display: flex;
+}
+.fa-shopping-cart{
+    font-size: 40px;
+    margin-top: 10px;
+}
+.cart-button{
+    background-color: blueviolet;
+    margin-top: 15px;
+    display: flex;
+    right:30px;
+    position: absolute;
+}
+.items-number{
+    position: absolute;
+    right:5px;
+    background-color: red;
+    bottom:10px;
+    width: 15px;
+}
+a{
+    color:black;
+}
+.login{
+    background-color: blueviolet;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 30px;
+    width:150px;
+    margin:30px;
+}

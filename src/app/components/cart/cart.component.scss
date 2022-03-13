@@ -1,0 +1,33 @@
+input{
+    margin:30px;
+    padding:20px;
+}
+.formValidator{
+    color: red;
+    font-weight: bold;
+}
+h2{
+    text-align: center;
+    top:200px;
+}
+.table{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    border: 1px gray;
+}
+table{
+    width:100%
+}
+td{
+    margin:10px;
+}
+td button{
+    width:40px;
+    height:40px
+    
+}
+td img{
+    width: 70px;
+    height: 110px;
+}

@@ -1,0 +1,47 @@
+<!-- Om det finns varor i varukorgen -->
+<ng-container *ngIf="movies.length>0">
+    <h3>Dina varor:</h3>
+    <div class="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Vara</th>
+                    <th>Bild</th>
+                    <th>Pris</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cartMovie of movies">
+                    <td>{{cartMovie.name}}</td>
+                    <td><img [src]="cartMovie.imageUrl"></td>
+                    <td>{{cartMovie.price | currency:'SEK'}}</td>
+                    <td><button (click)="removeFromTheCart(cartMovie)">x</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><strong>Totalt: {{totalAmount | currency:'SEK'}}</strong></p>
+    <form [formGroup]='userForm'>
+        <label>*Namn</label>
+        <input type="string" formControlName="firstName">
+        <div *ngIf="userForm.get('firstName')?.invalid && userForm.get('firstName')?.touched">
+            <p class="formValidator">Detta fält är obligatoriskt!</p>
+        </div>
+        <label>*Företags ID</label>
+        <input type="number" formControlName="companyId">
+        <div *ngIf="userForm.get('companyId')?.invalid && userForm.get('companyId')?.touched">
+            <p class="formValidator">Detta fält är obligatoriskt!</p>
+        </div>
+        <label>*Betalningssätt</label>
+        <input type="string" formControlName="paymentMethod">
+        <div *ngIf="userForm.get('paymentMethod')?.invalid && userForm.get('paymentMethod')?.touched">
+            <p class="formValidator">Detta fält är obligatoriskt!</p>
+        </div>
+        <button  type="submit" [disabled]="!userForm.valid" (click)="orderNow()">Beställ</button>
+    </form>
+</ng-container>
+<!-- Om varukorgen är tom -->
+<ng-container *ngIf="movies.length==0">
+    <h2 >Du har inga varor i varukorgen!</h2>
+</ng-container>

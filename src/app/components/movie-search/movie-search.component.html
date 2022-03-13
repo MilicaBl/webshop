@@ -1,0 +1,16 @@
+<div >
+    <a routerLink=""><input class="search"placeholder="Sök efter filmen här" #searchedMovie (input)="search(searchedMovie.value)"(keyup)="cartToTrue()" /></a>
+    <i class="fas fa-search search-icon"></i>
+</div>
+<div *ngIf="cart==true">
+<div *ngFor="let movie of movies| async">
+    <h3>{{movie.name}}</h3>
+    <h5>{{movie.year}}</h5>
+    <img class="movieItem" [src]="movie.imageUrl" alt="Movie poster" />
+    <span></span>
+    <p>{{movie.description}}</p>
+    <br><span>Publicerat : {{movie.added | date:'mediumDate' }}</span>
+    <br><span><strong>Pris: {{movie.price | currency:'SEK'}}</strong></span>
+    <button class="buyButton" (click)="saveToCart(movie)"> Lägg till i varukorgen</button>
+    </div>
+</div>
